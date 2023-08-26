@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="App.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1 onclick="init()">Movie Deck</h1>
+      </nav>
+    </header>
+    <main>
+      <section id="search-bar">
+        <input
+          name="search"
+          id="search-bar-input"
+          placeholder="Search movie by name..."
+        />
+        <button class="button" id="search-bar-button" onclick="search()">Search</button>
+      </section>
+      <section id="sorting">
+        <button class="button button--white" id="date-toggle" onclick="sortBy('date')">Sort by date (latest to oldest)</button>
+        <button class="button button--white" id="rating-toggle" onclick="sortBy('rating')">
+          Sort by rating (most to least)
+        </button>
+      </section>
+      <section id="tabs">
+        <button class="button button--black" id="all" onclick="changeState(this.id)">All</button>
+        <button class="button button--white" id="fav" onclick="changeState(this.id)">Favorites</button>
+      </section>
+      <section id="movie-list">
+      </section>
+      <section id="pagination">
+        <button
+          class="button button--white"
+          id="prev"
+          onclick="pagination(this.id)"
+        >
+          Prev
+        </button>
+        <div id="page-no">1</div>
+        <button
+          class="button button--white"
+          id="next"
+          onclick="pagination(this.id)"
+        >
+          Next
+        </button>
+      </section>
+    </main>
+  </body>
+</html>
+
 
