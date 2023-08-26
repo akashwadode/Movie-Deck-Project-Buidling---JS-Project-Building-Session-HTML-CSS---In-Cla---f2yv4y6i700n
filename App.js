@@ -131,6 +131,10 @@ async function fetchApi(apiUrl) {
     if (currentState == "all" || currentState == "search") {
         const result = data.results || [];
         totalPages = data.total_pages;
+        if(data.total_results == 0){
+            movieListContainer.innerHTML ="<p>No results</p>";
+            return; 
+        }
         console.log("total pages = " + totalPages);
         renderMovieList(result);
     } else{
