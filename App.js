@@ -15,8 +15,7 @@ let seachBarInput = document.querySelector("#search-bar-input");
 let pageNumberEle = document.querySelector("#page-no");
 
 // Sorting options
-let SortRating = "ASC";
-let SortDate = "ASC";
+
 const allPopularDesc = "popularity.desc";
 const sortDateAsc = "primary_release_date.asc";
 const sortDateDesc = "primary_release_date.desc";
@@ -111,7 +110,7 @@ function favoriteSection() {
     pageNumber = 1;
     pageNumberEle.textContent = pageNumber;
     totalPages = 1;
-
+    movieListContainer.innerHTML ="";
     if (localStorage.length == 0) {
         movieListContainer.innerHTML = "No favorites yet";
     } else {
@@ -205,6 +204,8 @@ function likeBtnToggle(movieId) {
         likeBtn.className = unlikeClass;
         localStorage.removeItem(movieId);
         console.log(`${movieId} unliked`);
+    }
+    if(currentState == "fav"){
         favoriteSection();
     }
 }
@@ -239,4 +240,3 @@ function createCustomElement(eleType, clName, parent) {
     parent.appendChild(newElement);
     return newElement;
 }
-
